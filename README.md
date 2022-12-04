@@ -74,7 +74,7 @@ Programming language that allows you to run logic on the browser and load the pa
 		}
 
 		export default App;
-		* export default : will export the component that can be used in other components by 		  importing as shown below
+		* export default : will export the component that can be used in other components by importing as shown below
 	* importing the component in other component
 		* import Expensive from './components/Expensive'
 	* Rendering the custome component in other component
