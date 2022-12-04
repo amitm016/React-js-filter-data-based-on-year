@@ -1,0 +1,24 @@
+.expense_date {
+	display: flex;
+	flex-direction: column;
+	width: 5.5rem;
+	background-color: #434346;
+	border-radius: 1.5625rem;
+	border: solid 0.1875rem;
+	border-color: white;
+	align-items: center;
+	margin: 0.0625rem;
+	padding: 0.625rem;
+	color: white;
+	:nth-child(1) {
+		// font-size: 1rem;
+		font-weight: 700;
+	}
+	:nth-child(2) {
+		// font-size: 1rem;
+	}
+	:nth-child(3) {
+		font-size: 2rem;
+		font-weight: 700;
+	}
+}

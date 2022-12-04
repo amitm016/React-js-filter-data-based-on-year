@@ -1,0 +1,35 @@
+.expensive_item {
+	display: flex;
+	align-items: center;
+	// border-radius: 0.75rem;
+	background-color: #979190;
+	padding: 0.5rem;
+	margin: 1rem 0;
+	font-size: 1rem;
+}
+
+.expensive_item_desc {
+	display: flex;
+  flex: 1;
+	align-items: flex-end;
+	color: white !important;
+	display: flex;
+	font-size: 1rem;
+	margin-left: 3.125rem;
+	align-items: center;
+	h2 {
+		font-weight: 700;
+		flex: 1;
+	}
+}
+
+.expensive_item_price {
+	display: flex;
+	justify-content: center;
+	background-color: #6C1F97;
+	border-radius: 0.75rem;
+	border: solid 3px;
+	border-color: white;
+	padding: 0.9375rem;
+	min-width: 4.6875rem;
+}
