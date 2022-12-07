@@ -1,0 +1,45 @@
+.add-new-expense-form {
+	label {
+		font-size: 1rem;
+		font-weight: bold;
+	}
+	.split {
+		display: flex;
+		justify-content: space-between;
+		overflow: hidden;
+	}
+	.add-new-expense-title {
+		display: flex;
+		flex-direction: column;
+		margin-right: 1.25rem;
+		flex: 1;
+	}
+	.add-new-expense-Date {
+		display: flex;
+		flex-direction: column;
+		flex: 1;
+	}
+	.add-new-expense-Cost {
+		display: flex;
+		flex-direction: column;
+	}
+	input {
+		max-width: 18.75rem;
+		min-width: 12.5rem;
+		padding: 0.625rem;
+		border-radius: 0.3125rem;
+		margin: 0.625rem 0;
+	}
+}
+
+.add-new-expense-submit {
+	display: flex;
+	justify-content: flex-end;
+	button {
+		padding: 1.25rem;
+    border-radius: 0.625rem;
+    background-color: #000080;
+		color: white;
+    font-size: 1rem;
+	}
+}

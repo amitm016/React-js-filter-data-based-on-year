@@ -1,14 +1,15 @@
 import ExpenseItem from "./ExpenseItem";
-import Card from "./Card";
-import { expenseData } from "./ExpenseData";
+import Card from "../UI/Card";
+// import { expenseData } from "./ExpenseData";
 
 import "./Expenses.scss"
 
-function Expense() {
+function Expense(props) {
+	console.log("props",props);
 	return(
 		<Card className="expenses">
 			{
-				expenseData.length > 0 && expenseData.map((data, id) => {
+				props.expenseData.length > 0 && props.expenseData.map((data, id) => {
 					return (
 						<ExpenseItem
 							key={id}  

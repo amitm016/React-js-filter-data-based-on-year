@@ -130,6 +130,54 @@ Programming language that allows you to run logic on the browser and load the pa
 					)
 				}
 
+> Arrow function
+		* If we use the Arrow function we no need to bind the funtion at the begin
+		const App = () => {
+			return (
+				<div className="App">
+					<header className="App-header">
+						<div> Lets get started </div>
+						<Expense />
+					</header>
+				</div>
+			);
+		}
+
+> Event handler props	
+		* ex onClick
+			<button onClick={() => {console.log("button clicked")}}>
+          click
+      </button> 
+
+> State
+		* is used to update the value
+		* State will once again render only the part or instance of component for updated part or instance
+		* function component we use hook called useState
+				* import React, { useState } from "react";
+				* how to use it ?
+					const [ title, setTilte ] = useState(props.expenseTitle)
+						* First we register a value(ex: props.expenseTitle) to useState
+						* updating state value setTilte("new title")
+					* multiple state there are two ways
+						1. 
+							const [ enteredTilte, setEnteredTilte  ] = useState('')
+							const [ enteredDate, setEnteredDate  ] = useState('')
+							const [ enteredCost, setEnteredCost  ] = useState('')
+							* updating state value setEnteredTilte("new title")
+
+						2. 
+							const [userInput, setUserInput] = useState({
+								enteredTitle: "",
+								enteredDate: "",
+								enteredCost: "",
+							});
+							* updating state
+									setUserInput((prevState) => {
+										return {
+											...prevState,
+											enteredDate: event.target.value,
+										}
+									});
 
 
 

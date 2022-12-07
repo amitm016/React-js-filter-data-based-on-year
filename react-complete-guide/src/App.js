@@ -1,8 +1,18 @@
 // import logo from './images/logo.svg'
-import Expense from "./components/Expenses";
-
+import Expense from "./components/Expenses/Expenses"
+import React, { useState } from "react";
+import AddNewExpense from "./components/AddNewExpense/AddNewExpense"
 
 function App() {
+  const [ expenseData, setExpenseData ] = useState([])
+  const onAddData = (enteredExpenseData) => {
+		const NewexpenseData = {
+			...enteredExpenseData,
+			id: Math.random().toString()
+		}
+		console.log("NewExpenseData from app", NewexpenseData);
+    setExpenseData([...expenseData, NewexpenseData])
+	}
   return (
     <div className="App">
       <header className="App-header">
@@ -18,8 +28,8 @@ function App() {
         >
           Learn React
         </a> */}
-        <div> Lets get started </div>
-        <Expense />
+        <AddNewExpense onAddData={onAddData} />
+        <Expense expenseData={expenseData} />
       </header>
     </div>
   );
