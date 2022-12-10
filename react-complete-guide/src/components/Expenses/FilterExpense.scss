@@ -1,0 +1,12 @@
+.expense-filter {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color:white;
+	font-size: 1.5rem;
+	.expense-filter-year {
+		padding: 0.625rem;
+    border-radius: 0.3125rem;
+    width: 6.25rem;
+	}
+}

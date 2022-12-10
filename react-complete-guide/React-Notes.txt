@@ -152,7 +152,7 @@ Programming language that allows you to run logic on the browser and load the pa
 > State
 		* is used to update the value
 		* State will once again render only the part or instance of component for updated part or instance
-		* function component we use hook called useState
+		* In function component we use hook called useState
 				* import React, { useState } from "react";
 				* how to use it ?
 					const [ title, setTilte ] = useState(props.expenseTitle)
@@ -178,6 +178,44 @@ Programming language that allows you to run logic on the browser and load the pa
 											enteredDate: event.target.value,
 										}
 									});
+
+> Passing data from one component to another component
+	1. Parent to child
+		* parent component
+			function App () {
+				return 
+				<Child data={{name: amit}}/>
+			}
+			export default App
+		* child component
+			function Child(props) {
+				return <div>{props.data.name}</div>
+			}
+	
+	2. Child to parent
+		* parent component
+			function App () {
+				const excutedFromchild = () => {
+					console.log("excutedFromchild")
+				}
+				return 
+				<Child data={saveData={excutedFromchild}}/>
+			}
+			export default App
+		* child component
+			function Child(props) {
+				const handleclick = () => {
+					props.saveData()
+				}
+				return <div onClick={handleclick}>test</div>
+			}
+
+> Stateless and statefull component
+	* Stateless or dumb : it is component which doesn't have any internal state.
+		* it used to output some data
+
+	* statefull or smart : it is component which have internal state.
+		* it used for managing state and Passing state to another component through props
 
 
 

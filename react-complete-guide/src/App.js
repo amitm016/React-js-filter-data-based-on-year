@@ -10,8 +10,9 @@ function App() {
 			...enteredExpenseData,
 			id: Math.random().toString()
 		}
-		console.log("NewExpenseData from app", NewexpenseData);
-    setExpenseData([...expenseData, NewexpenseData])
+    setExpenseData(prevExpenes  => {
+      return [...prevExpenes, NewexpenseData]
+    })
 	}
   return (
     <div className="App">

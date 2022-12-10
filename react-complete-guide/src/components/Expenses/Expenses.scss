@@ -3,4 +3,12 @@
   margin: 0 18.75rem;
   padding: 1.25rem 0.9375rem;
   min-width: 29.6875rem;
+  .no-filter-data-message {
+    display: flex;
+    color: white;
+    font-size: 1rem;
+    justify-content: center;
+    font-weight: bold;
+    margin: 1rem 0;
+  }
 }

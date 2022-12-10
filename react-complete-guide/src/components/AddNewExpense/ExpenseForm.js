@@ -23,7 +23,6 @@ const ExpenseForm = (props) => {
     // 		enteredTitle: event.target.value,
     // 	}
     // })
-    console.log("iniside titleChangeHandler", event.target.value);
   };
 
   const dateChangeHandler = (event) => {
@@ -34,7 +33,6 @@ const ExpenseForm = (props) => {
     // 		enteredDate: event.target.value,
     // 	}
     // });
-    console.log("iniside dateChangeHandler", event.target.value);
   };
 
   const costChangeHandler = (event) => {
@@ -54,7 +52,6 @@ const ExpenseForm = (props) => {
       expenseDate: new Date(enteredDate),
       expensePrice: `${enteredCost} Rs`,
     };
-    console.log("data++++++++++++++++", data);
 		// const [onSaveExpenseData] = props
 		if(props.onSaveExpenseData) {
 			props.onSaveExpenseData(data)
@@ -63,6 +60,10 @@ const ExpenseForm = (props) => {
     setEnteredDate("");
     setEnteredCost("");
   };
+
+  const handleCancel = () => {
+    props.cancel()
+  }
 
   return (
     <form onSubmit={handleSubmitClick}>
@@ -82,7 +83,7 @@ const ExpenseForm = (props) => {
               type="date"
               value={enteredDate}
               onChange={dateChangeHandler}
-              min="2021-01-01"
+              min="2020-01-01"
             />
           </div>
         </div>
@@ -97,8 +98,13 @@ const ExpenseForm = (props) => {
           />
         </div>
       </div>
-      <div className="add-new-expense-submit">
-        <button type="submit">Add Expense</button>
+      <div className="add-new-expense-buttons">
+        <div className="add-new-expense--button-cancel">
+          <button onClick={handleCancel}>Cancel</button>
+        </div>
+        <div className="add-new-expense--button-submit">
+          <button type="submit">Add Expense</button>
+        </div>
       </div>
     </form>
   );

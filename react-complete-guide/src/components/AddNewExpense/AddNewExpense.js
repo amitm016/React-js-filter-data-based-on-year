@@ -1,19 +1,34 @@
-import ExpenseForm from './ExpenseForm'
-import './AddNewExpense.css'
+import React, { useState } from "react";
+import ExpenseForm from "./ExpenseForm";
+import "./AddNewExpense.scss";
 
 const AddNewExpense = (props) => {
-	const onSaveExpenseData = (enteredExpenseData) => {
-		console.log("expensedata from AddNewExpense", enteredExpenseData);
-		if(props.onAddData) {
-			props.onAddData(enteredExpenseData)
-		}
-	} 
-	return(
-		<div className='add-new-expense'>
-			<ExpenseForm onSaveExpenseData={onSaveExpenseData} />
-		</div>
-	)
-}
+  const [OpenAddnewExpenses, setOpenAddnewExpenses] = useState(false);
 
-export default AddNewExpense
+  const onSaveExpenseData = (enteredExpenseData) => {
+    if (props.onAddData) {
+      props.onAddData(enteredExpenseData);
+    }
+  };
 
+  const handleClick = () => {
+    setOpenAddnewExpenses(!OpenAddnewExpenses);
+  };
+
+  return (
+    <div className="add-new-expense">
+      {!OpenAddnewExpenses && (
+				<div className="add-new-expense-button">
+					<button className="add-new-expense-button-style" onClick={handleClick}>
+						Add new Expenses
+					</button>
+				</div>
+      )}
+      {OpenAddnewExpenses && (
+        <ExpenseForm onSaveExpenseData={onSaveExpenseData} cancel={handleClick} />
+      )}
+    </div>
+  );
+};
+
+export default AddNewExpense;
